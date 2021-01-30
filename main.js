@@ -1,16 +1,9 @@
 //Start first class input
 document.getElementById("firstClassCountIncrease").addEventListener("click", function () {
     handleFirstClassChange(true);
-    // if(firstclassInput>0){
-    //     document.querySelector("firstClassCountDecrease").removeAttribute("disabled");
-    //     document.querySelector("firstClassCountDecrease").classList.remove("disabled");
-    // }
   });
 document.getElementById("firstClassCountDecrease").addEventListener("click", function () {
     handleFirstClassChange(false);
-    // if(firstclassInput==0){
-    //     document.querySelector("firstClassCountDecrease").setAttribute("disabled", "disabled");
-    // }
   });
 function handleFirstClassChange(isIncrease) {
   const firstclassInput = document.getElementById("firstClassInput");
@@ -19,7 +12,7 @@ function handleFirstClassChange(isIncrease) {
   if (isIncrease == true) {
     firstclassNewCount = firstclassCount + 1;
   }
-  if (isIncrease == false) {
+  if (isIncrease == false && firstclassNewCount>0) {
     firstclassNewCount = firstclassCount - 1;
   }
   firstclassInput.value = firstclassNewCount;
@@ -41,7 +34,7 @@ function handleClassChange(isIncrease) {
   if (isIncrease == true) {
     economyClassNewCount = economyclassCount + 1;
   }
-  if (isIncrease == false) {
+  if (isIncrease == false && economyClassNewCount>0) {
     economyClassNewCount = economyclassCount - 1;
   }
   economyclassInput.value = economyClassNewCount;
@@ -67,5 +60,5 @@ function calculateTotal() {
 
 //show alert
 function showAlert(){
-    alert("Are you sure to Booked flight ?");
+    alert("Are you sure to Booking this flight ?");
 }
